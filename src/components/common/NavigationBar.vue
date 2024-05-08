@@ -1,5 +1,5 @@
 <template>
-  <div class="h-10 max-w-[500px] w-full bg-white shadow-lg rounded-full flex">
+  <div class="flex h-10 w-full max-w-[500px] rounded-full bg-white shadow-lg">
     <NavibarButton @click-action="setPath('sort')" :name="'sort'"
       >Sorting</NavibarButton
     >

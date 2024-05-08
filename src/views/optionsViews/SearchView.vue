@@ -1,3 +1,8 @@
 <template>
-  <div class="w-[50px] h-[50px] bg-green">Search</div>
+  <div class="w-full">
+    <OptionsBar />
+  </div>
 </template>
+<script setup lang="ts">
+import OptionsBar from '@/widgets/OptionsBar.vue';
+</script>

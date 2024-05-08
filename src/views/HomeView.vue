@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-between items-center p-4 flex-col">
+  <div class="flex h-full w-full flex-col items-center gap-4 p-4">
     <NavigationBar />
     <router-view />
   </div>

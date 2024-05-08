@@ -12,6 +12,7 @@ module.exports = {
       darkGrey: '#5C5C5C',
       green: '#73B96D',
       red: '#CB6B6B',
+      decorator: '#ECECEC',
       gradients: {
         blueStart: '#156299',
         blueEnd: '#23A3FF',

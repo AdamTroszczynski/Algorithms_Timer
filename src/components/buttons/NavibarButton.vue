@@ -1,11 +1,11 @@
 <template>
   <button
     @click="emitClickEvent"
-    class="h-10 w-full font-montserrat text-xs rounded-full px-4 flex justify-center items-center md:text-sm lg:text-sm"
+    class="flex h-10 w-full items-center justify-center rounded-full px-4 text-xs md:text-sm lg:text-sm"
     :class="
       store.selectedFunction === name
-        ? 'text-white font-bold bg-gradient-to-r from-gradients-blueStart to-gradients-blueEnd lg:font-bold'
-        : 'text-black font-medium'
+        ? 'bg-gradient-to-r from-gradients-blueStart to-gradients-blueEnd font-bold text-white lg:font-bold'
+        : 'font-medium text-black'
     "
   >
     <slot></slot>
