@@ -15,13 +15,18 @@
     </button>
   </div>
   <dialog id="my_modal_2" class="modal">
-    <div class="modal-box bg-white p-3 shadow-lg">
-      <h3 class="text-base font-semibold text-black">{{ modalName }}</h3>
-      <ul class="flex w-full flex-wrap gap-3 px-1 py-3 text-sm text-black">
+    <div class="modal-box bg-white p-3 shadow-lg md:px-6">
+      <h3 class="text-base font-semibold text-black sm:text-lg">
+        {{ modalName }}
+      </h3>
+      <ul
+        class="gap flex w-full flex-wrap justify-center gap-3 px-1 pt-3 text-sm text-black sm:gap-6 md:gap-8 lg:gap-12"
+      >
         <li
           v-for="option in options"
           onclick="my_modal_2.close()"
           @click="emitSelectedValue(option.toString())"
+          class="cursor-pointer md:text-base"
         >
           {{ option }}
         </li>

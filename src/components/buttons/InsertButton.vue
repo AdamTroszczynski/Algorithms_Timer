@@ -12,17 +12,17 @@
         @input="emitInputValue"
         v-model="displayValue"
         type="number"
-        class="mb-1 max-w-[60px] bg-transparent text-center text-sm font-semibold text-black [appearance:textfield] focus:outline-0 sm:text-base md:mb-2 md:text-lg [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        class="mb-1 max-w-[60px] cursor-pointer bg-transparent text-center text-sm font-semibold text-black [appearance:textfield] focus:outline-0 sm:text-base md:mb-2 md:text-lg [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
       />
       <ArrowIcon
         v-if="withInfo"
-        class="absolute top-[100%] transition-all duration-300 ease-in-out"
+        class="absolute top-[100%] transition-all duration-300 ease-in-out sm:top-[90%]"
         :class="isOpen ? 'rotate-180' : ''"
       />
     </div>
     <div
       v-if="isOpen"
-      class="absolute top-[130%] z-[-1] h-[50px] w-[100%] rounded-bl-full rounded-br-full bg-white px-5 text-center text-[0.6rem] font-normal text-grey shadow-lg"
+      class="absolute top-[130%] z-[-1] h-[50px] w-[100%] rounded-bl-full rounded-br-full bg-white px-5 text-center text-[0.6rem] font-normal text-grey shadow-lg sm:top-[125%] sm:text-sm md:top-[115%]"
     >
       {{ infoMessage }}
     </div>
