@@ -1,10 +1,17 @@
 <template>
-  <div class="h-40 w-64 rounded-[30px] bg-white px-11 py-5 shadow-xl">
-    <h3 class="text-center text-lg font-semibold" :class="setClasses">
+  <div
+    class="flex h-40 w-64 flex-col items-center justify-between rounded-[30px] bg-white px-11 py-5 shadow-xl md:h-60 md:w-[430px] md:py-8"
+  >
+    <h3
+      class="text-center text-lg font-semibold md:text-xl"
+      :class="setClasses"
+    >
       {{ setTitle }}
     </h3>
-    <h2></h2>
-    <h3 class="text-center text-base font-semibold text-grey">
+    <h2 class="text-4xl font-semibold text-black md:text-5xl">
+      {{ setTimer }}
+    </h2>
+    <h3 class="text-center text-base font-semibold text-grey md:text-xl">
       {{ isFailed ? 'Maximum time exceeded' : `${iteration} Iterations` }}
     </h3>
   </div>
@@ -52,5 +59,19 @@ const setClasses = computed<String>(() => {
     : props.isFailed
       ? 'text-red'
       : 'text-grey';
+});
+
+const setTimer = computed<String>(() => {
+  const hour = Math.floor(props.time / 3600);
+  const minute = Math.floor((props.time % 3600) / 60);
+  const second = props.time % 60;
+
+  const displayHour = hour.toString().length === 1 ? `0${hour}` : `${hour}`;
+  const displayMinute =
+    minute.toString().length === 1 ? `0${minute}` : `${minute}`;
+  const displaySecond =
+    second.toString().length === 1 ? `0${second}` : `${second}`;
+
+  return `${displayHour}:${displayMinute}:${displaySecond}`;
 });
 </script>
