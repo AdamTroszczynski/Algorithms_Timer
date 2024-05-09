@@ -9,6 +9,7 @@ export const useMainStore = defineStore('main', () => {
 
   const isTimerRunning: Ref<boolean> = ref(false);
   const isCompleted: Ref<boolean> = ref(false);
+  const iteration: Ref<number> = ref(0);
 
   return {
     dataVolume,
@@ -16,5 +17,6 @@ export const useMainStore = defineStore('main', () => {
     selectedAlgorithm,
     isTimerRunning,
     isCompleted,
+    iteration,
   };
 });

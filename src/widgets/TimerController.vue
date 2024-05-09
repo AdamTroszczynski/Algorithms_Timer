@@ -1,8 +1,9 @@
 <template>
   <TheTimer
     :time="timerValue"
-    :iteration="0"
+    :iteration="store.iteration"
     :is-failed="isFailed"
+    :is-completed="store.isCompleted"
     :title="setTittle"
   />
 </template>
@@ -29,10 +30,11 @@ const setTittle = computed<string>(() => {
 });
 
 const start = () => {
-  store.isTimerRunning = true;
+  store.iteration = 0;
   store.isCompleted = false;
   isFailed.value = false;
   timerValue.value = 0;
+  store.isTimerRunning = true;
   setTimer();
 };
 

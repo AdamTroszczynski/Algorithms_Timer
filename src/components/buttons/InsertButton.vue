@@ -12,7 +12,7 @@
         @input="emitInputValue"
         v-model="displayValue"
         type="number"
-        class="mb-1 max-w-[60px] cursor-pointer bg-transparent text-center text-sm font-semibold text-black [appearance:textfield] focus:outline-0 sm:text-base md:mb-2 md:text-lg [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        class="mb-1 max-w-[60px] cursor-pointer bg-transparent text-center text-sm font-semibold text-black [appearance:textfield] focus:outline-0 sm:text-base md:mb-2 md:max-w-[120px] md:text-lg [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
       />
       <ArrowIcon
         v-if="withInfo"
