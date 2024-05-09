@@ -1,30 +1,50 @@
 <template>
   <div class="flex h-10 w-full max-w-[500px] rounded-full bg-white shadow-lg">
-    <NavibarButton @click-action="setPath('sort')" :name="'sort'"
-      >Sorting</NavibarButton
+    <RouterLink
+      :to="'/sort'"
+      class="flex h-10 w-full items-center justify-center rounded-full px-4 text-xs md:text-sm lg:text-sm"
+      :class="
+        router.currentRoute.value.fullPath === '/sort'
+          ? 'bg-gradient-to-r from-gradients-blueStart to-gradients-blueEnd font-bold text-white lg:font-bold'
+          : 'font-medium text-black'
+      "
+      >Sorting</RouterLink
     >
-    <NavibarButton @click-action="setPath('search')" :name="'search'"
-      >Searching</NavibarButton
+    <RouterLink
+      :to="'/search'"
+      class="flex h-10 w-full items-center justify-center rounded-full px-4 text-xs md:text-sm lg:text-sm"
+      :class="
+        router.currentRoute.value.fullPath === '/search'
+          ? 'bg-gradient-to-r from-gradients-blueStart to-gradients-blueEnd font-bold text-white lg:font-bold'
+          : 'font-medium text-black'
+      "
+      >Searching</RouterLink
     >
-    <NavibarButton @click-action="setPath('trees')" :name="'trees'"
-      >Trees</NavibarButton
+    <RouterLink
+      :to="'/trees'"
+      class="flex h-10 w-full items-center justify-center rounded-full px-4 text-xs md:text-sm lg:text-sm"
+      :class="
+        router.currentRoute.value.fullPath === '/trees'
+          ? 'bg-gradient-to-r from-gradients-blueStart to-gradients-blueEnd font-bold text-white lg:font-bold'
+          : 'font-medium text-black'
+      "
+      >Trees</RouterLink
     >
-    <NavibarButton @click-action="setPath('graphs')" :name="'graphs'"
-      >Graphs</NavibarButton
+    <RouterLink
+      :to="'/graphs'"
+      class="flex h-10 w-full items-center justify-center rounded-full px-4 text-xs md:text-sm lg:text-sm"
+      :class="
+        router.currentRoute.value.fullPath === '/graphs'
+          ? 'bg-gradient-to-r from-gradients-blueStart to-gradients-blueEnd font-bold text-white lg:font-bold'
+          : 'font-medium text-black'
+      "
+      >Graphs</RouterLink
     >
   </div>
 </template>
 
 <script setup lang="ts">
-import { useMainStore } from '@/stores/mainStore';
-import { useRouter } from 'vue-router';
-import NavibarButton from '@/components/buttons/NavibarButton.vue';
+import { useRouter, RouterLink } from 'vue-router';
 
-const store = useMainStore();
 const router = useRouter();
-
-const setPath = (name: string): void => {
-  store.selectedFunction = name;
-  router.push(`/${name}`);
-};
 </script>
