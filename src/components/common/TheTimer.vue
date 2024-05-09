@@ -6,9 +6,12 @@
       class="text-center text-lg font-semibold md:text-xl"
       :class="setClasses"
     >
-      {{ setTitle }}
+      {{ title }}
     </h3>
-    <h2 class="text-4xl font-semibold text-black md:text-5xl">
+    <h2
+      class="text-4xl font-semibold text-black md:text-5xl"
+      :class="isFailed ? 'line-through' : ''"
+    >
       {{ setTimer }}
     </h2>
     <h3 class="text-center text-base font-semibold text-grey md:text-xl">
@@ -29,9 +32,9 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-  isRunning: {
-    type: Boolean,
-    default: false,
+  title: {
+    type: String,
+    required: true,
   },
   isCompleted: {
     type: Boolean,
@@ -41,16 +44,6 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
-
-const setTitle = computed<String>(() => {
-  return props.isRunning
-    ? 'Sorting data...'
-    : props.isCompleted
-      ? 'Sorting Completed'
-      : props.isFailed
-        ? 'Sorting Failed!'
-        : 'Waiting for start...';
 });
 
 const setClasses = computed<String>(() => {

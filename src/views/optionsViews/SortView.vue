@@ -3,14 +3,15 @@
     class="relative z-10 flex w-full flex-col items-center justify-center gap-10"
   >
     <OptionsBar />
-    <TimerCard :time="0" :iteration="0" :is-failed="false" :is-running="true" />
+    <TimerController />
   </div>
 </template>
 
 <script setup lang="ts">
 import OptionsBar from '@/widgets/OptionsBar.vue';
-import TimerCard from '@/components/cards/TimerCard.vue';
+import TimerController from '@/widgets/TimerController.vue';
 import { useMainStore } from '@/stores/mainStore';
+import { computed, ref, type Ref } from 'vue';
 
 const store = useMainStore();
 </script>
